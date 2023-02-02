@@ -5,13 +5,13 @@ const TodoList = () => {
   const tasks = useList([]);
   const [newTask, setNewTask] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     tasks.push(newTask);
     setNewTask("");
   };
-  const handleInputChange = (e) => {
-    setNewTask(e.target.value);
+  const handleInputChange = (event) => {
+    setNewTask(event.target.value);
   };
 
   return (
@@ -31,7 +31,7 @@ const TodoList = () => {
           <p>Está vacia la lista</p>
         ) : (
           <ul>
-            {tasks.value.map((task, index) => {
+            {tasks.value.map((task, index) => (
               <li key={index}>
                 <input
                   type="checkbox"
@@ -39,10 +39,14 @@ const TodoList = () => {
                   checked={false}
                 />
                 {task}
-              </li>;
-            })}
+              </li>
+            ))}
           </ul>
         )}
+        <button
+        onClick={tasks.clear}>Reset</button>
+        <button>Sort</button>
+        <button>Invert</button>
     </div>
   );
 };

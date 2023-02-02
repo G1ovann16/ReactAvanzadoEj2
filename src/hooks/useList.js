@@ -13,6 +13,14 @@ const useList = (initialValue = []) => {
 
   const isEmpty = () => value.length === 0;
 
-  return { value, setValue, push, remove, isEmpty };
+  const clear = () => {
+    setValue([]);
+  };
+
+  const sort = () => {};
+
+  const invert = () => {};
+
+  return { value, setValue, push, remove, isEmpty, clear, sort, invert };
 };
 export default useList;
