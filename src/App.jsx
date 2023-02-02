@@ -3,12 +3,14 @@ import './App.css'
 import UseCounter from './components/UseCounter'
 import UseBoolean from './components/UseBoolean'
 import Example from './components/ExampleBoolean'
+import TodoList from './components/list/TodoList'
 
 function App() {
 
   return (
     <div className="App">
-     <Example></Example>
+     {/* <UseCounter></UseCounter> */} 
+     <TodoList></TodoList>
     </div>
   )
 }
