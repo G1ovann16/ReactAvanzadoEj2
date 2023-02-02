@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
-const useBoolean = (initialValue) => {
+const UseBoolean = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 
   const updateValue = useRef({
@@ -9,9 +9,9 @@ const useBoolean = (initialValue) => {
     of: () => setValue(false),
   });
   return [value, updateValue.current];
-};
+
 const ExampleBoolean = ({}) => {
-  const [lista, setLista] = useState([]);
+  const [list, setList] = useState([]);
 
   const [loading, setLoading] = useBoolean(false);
 
@@ -21,13 +21,13 @@ const ExampleBoolean = ({}) => {
     setLoading.on;
     fetch("https://regres.in/users")
       .then((res) => res.json())
-      .then(setLista)
+      .then(setList)
       .catch((error) => {
         console.log(`Ha ocurrido un error ${error}`);
         setError.on();
       })
       .finally(() => setLoading.off);
-  }, [lista, setError, setLoading]);
+  }, [list, setError, setLoading]);
 
   return (
     <div>
@@ -35,6 +35,7 @@ const ExampleBoolean = ({}) => {
       <p>{error ? "ha ocurrido un error..." : null}</p>
     </div>
   );
+};
 };
 
 export default UseBoolean;
