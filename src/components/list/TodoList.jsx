@@ -45,8 +45,10 @@ const TodoList = () => {
         )}
         <button
         onClick={tasks.clear}>Reset</button>
-        <button>Sort</button>
-        <button>Invert</button>
+        <button
+        onClick={tasks.sort} >Sort</button>
+        <button
+       onClick={tasks.invert} >Invert</button>
     </div>
   );
 };

@@ -17,9 +17,18 @@ const useList = (initialValue = []) => {
     setValue([]);
   };
 
-  const sort = () => {};
+  const sort = () => {
+    
+    console.log(value)
+    setValue((oldValue)=> oldValue.sort())
+    console.log(value)
+  };
 
-  const invert = () => {};
+  const invert = () => {
+    console.log(value)
+    setValue((oldValue)=> oldValue.reverse())
+    console.log(value)
+  };
 
   return { value, setValue, push, remove, isEmpty, clear, sort, invert };
 };
